@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Criar conta — TaskFlow</title>
+  <meta name="description" content="Crie sua conta no TaskFlow, o sistema gerenciador de tarefas." />
+  <link rel="stylesheet" href="../Estilos/stylesBase.css" />
+</head>
+<body class="auth-page">
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
+
+  <main id="conteudo-principal" tabindex="-1" class="auth-shell">
+    <div class="auth-card">
+      <p class="auth-brand" aria-hidden="true"><span class="logo-mark">📋</span> TaskFlow</p>
+
+      <h1>Criar conta</h1>
+      <p class="auth-subtitle">Preencha os dados abaixo para começar a organizar suas tarefas.</p>
+
+      <form id="formCadastro" class="form" novalidate>
+        <div class="field">
+          <label for="nome">Nome completo</label>
+          <input id="nome" name="nome" type="text" autocomplete="name" required aria-required="true" minlength="5" pattern="\S+(\s+\S+)+" placeholder="Nome e sobrenome" />
+          <span class="field-error">Informe nome e sobrenome, com pelo menos 5 caracteres no total.</span>
+        </div>
+
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" autocomplete="email" required aria-required="true" pattern="[^\s@]+@[^\s@]+\.com(\.br)?" placeholder="voce@exemplo.com" />
+          <span class="field-error">Informe um e-mail válido, no formato nome@dominio.com (ou .com.br).</span>
+        </div>
+
+        <div class="field">
+          <label for="senha">Senha</label>
+          <input id="senha" name="senha" type="password" autocomplete="new-password" required aria-required="true" minlength="8" placeholder="Mínimo de 8 caracteres" />
+          <span class="field-error">A senha deve ter pelo menos 8 caracteres.</span>
+        </div>
+
+        <div class="field">
+          <label for="confirmarSenha">Confirmar senha</label>
+          <input id="confirmarSenha" name="confirmarSenha" type="password" autocomplete="new-password" required aria-required="true" minlength="8" placeholder="Repita a senha" />
+          <span class="field-error">As senhas devem coincidir.</span>
+        </div>
+
+        <div id="cadastroStatus" class="form-status" role="status" aria-live="polite"></div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary btn-block">Criar conta</button>
+        </div>
+      </form>
+
+      <p class="auth-switch">Já tem uma conta? <a href="login.html">Entrar</a></p>
+    </div>
+  </main>
+
+  <script src="../Scripts/app.js" defer></script>
+</body>
+</html>

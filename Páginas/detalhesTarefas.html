@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detalhes da Tarefa — TaskFlow</title>
+  <meta name="description" content="Veja todos os detalhes de uma tarefa: prazo, prioridade, status e categoria." />
+  <link rel="stylesheet" href="../Estilos/stylesBase.css" />
+</head>
+<body>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="dashboardTarefas.html"><span class="logo-mark" aria-hidden="true">📋</span> TaskFlow</a>
+
+      <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+        Menu
+      </button>
+
+      <nav class="nav-menu" id="navMenu" data-open="false" aria-label="Navegação principal">
+        <a href="dashboardTarefas.html" class="nav-link">Dashboard</a>
+        <a href="criarTarefa.html" class="nav-link">Nova Tarefa</a>
+        <span class="nav-user" id="navUserName">Olá, visitante</span>
+        <a href="login.html" id="logoutBtn" class="nav-link nav-link--exit">Sair</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal" tabindex="-1">
+    <div class="container">
+      <p class="breadcrumb"><a href="dashboardTarefas.html">← Voltar para o dashboard</a></p>
+
+      <article class="detail-card" id="detalheTarefa" aria-labelledby="detalheTitulo">
+        <div class="detail-card-header">
+          <div>
+            <h1 id="detalheTitulo">Revisar wireframes do Dashboard</h1>
+            <div class="detail-badges">
+              <span id="detalhePrioridade" class="badge badge-prioridade-alta">Alta</span>
+              <span id="detalheStatus" class="badge badge-status-andamento">Em andamento</span>
+            </div>
+          </div>
+          <div class="detail-actions">
+            <a id="linkEditar" class="btn btn-secondary" href="editarTarefa.html?id=t1">Editar tarefa</a>
+            <button type="button" id="btnExcluirDetalhe" class="btn btn-danger">Excluir</button>
+          </div>
+        </div>
+
+        <h2 class="visually-hidden">Descrição</h2>
+        <p id="detalheDescricao">
+          Conferir o layout em Figma com o time de design e validar os breakpoints mobile e desktop
+          antes da implementação final. Registrar qualquer ajuste necessário na documentação técnica.
+        </p>
+
+        <dl class="detail-grid">
+          <div class="detail-item">
+            <dt>Prazo</dt>
+            <dd id="detalhePrazo">20/09/2026</dd>
+          </div>
+          <div class="detail-item">
+            <dt>Categoria</dt>
+            <dd id="detalheCategoria">Design</dd>
+          </div>
+          <div class="detail-item">
+            <dt>Criada por</dt>
+            <dd>Você</dd>
+          </div>
+        </dl>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© 2026 TaskFlow — Projeto acadêmico ETG.</span>
+      <span>Feito com HTML5 e CSS3.</span>
+    </div>
+  </footer>
+
+  <script src="../Scripts/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard de Tarefas — TaskFlow</title>
+  <meta name="description" content="Acompanhe, filtre e gerencie todas as suas tarefas em um só lugar." />
+  <link rel="stylesheet" href="../Estilos/stylesBase.css" />
+</head>
+<body>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="dashboardTarefas.html"><span class="logo-mark" aria-hidden="true">📋</span> TaskFlow</a>
+
+      <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+        Menu
+      </button>
+
+      <nav class="nav-menu" id="navMenu" data-open="false" aria-label="Navegação principal">
+        <a href="dashboardTarefas.html" class="nav-link" aria-current="page">Dashboard</a>
+        <a href="criarTarefa.html" class="nav-link">Nova Tarefa</a>
+        <span class="nav-user" id="navUserName">Olá, visitante</span>
+        <a href="login.html" id="logoutBtn" class="nav-link nav-link--exit">Sair</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal" tabindex="-1">
+    <div class="container">
+      <div class="page-header">
+        <div>
+          <h1>Minhas tarefas</h1>
+          <p>Visualize o andamento de todas as tarefas e filtre pelo que importa agora.</p>
+        </div>
+        <a class="btn btn-primary" href="criarTarefa.html">+ Nova tarefa</a>
+      </div>
+
+      <section class="summary-strip" aria-label="Resumo das tarefas">
+        <div class="summary-card">
+          <strong id="resumoTotal">4</strong>
+          <span>Total de tarefas</span>
+        </div>
+        <div class="summary-card">
+          <strong id="resumoPendente">2</strong>
+          <span>Pendentes</span>
+        </div>
+        <div class="summary-card">
+          <strong id="resumoAndamento">1</strong>
+          <span>Em andamento</span>
+        </div>
+        <div class="summary-card">
+          <strong id="resumoConcluida">1</strong>
+          <span>Concluídas</span>
+        </div>
+      </section>
+
+      <form class="toolbar" aria-label="Filtros de tarefas">
+        <div class="field">
+          <label for="filtroStatus">Status</label>
+          <select id="filtroStatus" name="filtroStatus">
+            <option value="">Todos</option>
+            <option value="pendente">Pendente</option>
+            <option value="andamento">Em andamento</option>
+            <option value="concluida">Concluída</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="filtroPrioridade">Prioridade</label>
+          <select id="filtroPrioridade" name="filtroPrioridade">
+            <option value="">Todas</option>
+            <option value="baixa">Baixa</option>
+            <option value="media">Média</option>
+            <option value="alta">Alta</option>
+          </select>
+        </div>
+      </form>
+
+      <h2 class="visually-hidden">Lista de tarefas</h2>
+      <ul class="task-grid" id="listaTarefas" aria-label="Lista de tarefas">
+        <li class="task-card">
+          <div class="task-card-top">
+            <h3><a href="detalhesTarefas.html?id=t1">Revisar wireframes do Dashboard</a></h3>
+            <span class="badge badge-prioridade-alta">Alta</span>
+          </div>
+          <p>Conferir o layout em Figma com o time de design e validar os breakpoints mobile e desktop.</p>
+          <div class="task-meta">
+            <span class="badge badge-categoria">Design</span>
+            <span class="badge badge-status-andamento">Em andamento</span>
+            <span>Prazo: 20/09/2026</span>
+          </div>
+          <div class="task-card-actions">
+            <a class="btn btn-secondary btn-sm" href="detalhesTarefas.html?id=t1">Ver detalhes</a>
+            <a class="btn btn-secondary btn-sm" href="editarTarefa.html?id=t1">Editar</a>
+            <button type="button" class="btn btn-danger btn-sm" data-excluir="t1">Excluir</button>
+          </div>
+        </li>
+      </ul>
+
+      <p class="empty-state" id="estadoVazio" hidden>Nenhuma tarefa encontrada para os filtros selecionados.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© 2026 TaskFlow — Projeto acadêmico ETG.</span>
+      <span>Feito com HTML5 e CSS3.</span>
+    </div>
+  </footer>
+
+  <script src="../Scripts/app.js" defer></script>
+</body>
+</html>

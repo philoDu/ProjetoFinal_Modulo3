@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entrar — TaskFlow</title>
+  <meta name="description" content="Acesse sua conta no TaskFlow, o sistema gerenciador de tarefas." />
+  <link rel="stylesheet" href="../Estilos/stylesBase.css" />
+</head>
+<body class="auth-page">
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
+
+  <main id="conteudo-principal" tabindex="-1" class="auth-shell">
+    <div class="auth-card">
+      <p class="auth-brand" aria-hidden="true"><span class="logo-mark">📋</span> TaskFlow</p>
+
+      <h1>Entrar</h1>
+      <p class="auth-subtitle">Acesse sua conta para gerenciar suas tarefas.</p>
+
+      <form id="formLogin" class="form" novalidate>
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" autocomplete="email" required aria-required="true" placeholder="voce@exemplo.com" />
+          <span class="field-error">Informe um e-mail válido.</span>
+        </div>
+
+        <div class="field">
+          <label for="senha">Senha</label>
+          <input id="senha" name="senha" type="password" autocomplete="current-password" required aria-required="true" minlength="6" placeholder="Mínimo de 6 caracteres" />
+          <span class="field-error">A senha deve ter pelo menos 6 caracteres.</span>
+        </div>
+
+        <div id="loginStatus" class="form-status" role="status" aria-live="polite"></div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+        </div>
+      </form>
+
+      <p class="auth-switch">Ainda não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+    </div>
+  </main>
+
+  <script src="../Scripts/app.js" defer></script>
+</body>
+</html>

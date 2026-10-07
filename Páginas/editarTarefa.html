@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editar Tarefa — TaskFlow</title>
+  <meta name="description" content="Edite o título, descrição, prazo, prioridade, status e categoria de uma tarefa existente." />
+  <link rel="stylesheet" href="../Estilos/stylesBase.css" />
+</head>
+<body>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="dashboardTarefas.html"><span class="logo-mark" aria-hidden="true">📋</span> TaskFlow</a>
+
+      <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+        Menu
+      </button>
+
+      <nav class="nav-menu" id="navMenu" data-open="false" aria-label="Navegação principal">
+        <a href="dashboardTarefas.html" class="nav-link">Dashboard</a>
+        <a href="criarTarefa.html" class="nav-link">Nova Tarefa</a>
+        <span class="nav-user" id="navUserName">Olá, visitante</span>
+        <a href="login.html" id="logoutBtn" class="nav-link nav-link--exit">Sair</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal" tabindex="-1">
+    <div class="container">
+      <p class="breadcrumb"><a href="dashboardTarefas.html">← Voltar para o dashboard</a></p>
+
+      <div class="page-header">
+        <div>
+          <h1>Editar tarefa</h1>
+          <p>Atualize as informações da tarefa selecionada.</p>
+        </div>
+      </div>
+
+      <section class="form-card" aria-labelledby="tituloFormEditar">
+        <h2 id="tituloFormEditar" class="visually-hidden">Formulário de edição de tarefa</h2>
+
+        <form id="formEditarTarefa" class="form" novalidate>
+          <div class="field">
+            <label for="titulo">Título</label>
+            <input id="titulo" name="titulo" type="text" required aria-required="true" minlength="5" value="Revisar wireframes do Dashboard" />
+            <span class="field-error">Informe um título com pelo menos 5 caracteres.</span>
+          </div>
+
+          <div class="field">
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" name="descricao" minlength="3">Conferir o layout em Figma com o time de design e validar os breakpoints mobile e desktop antes da implementação final.</textarea>
+            <span class="field-error">Se preenchida, a descrição deve ter pelo menos 3 caracteres.</span>
+          </div>
+
+          <div class="form-row form-row--2">
+            <div class="field">
+              <label for="prazo">Prazo</label>
+              <input id="prazo" name="prazo" type="date" required aria-required="true" value="2026-09-20" />
+              <span class="field-error">Selecione uma data de prazo.</span>
+            </div>
+
+            <div class="field">
+              <label for="categoria">Categoria</label>
+              <input id="categoria" name="categoria" type="text" list="listaCategorias" value="Design" />
+              <datalist id="listaCategorias">
+                <option value="Trabalho"></option>
+                <option value="Estudos"></option>
+                <option value="Pessoal"></option>
+                <option value="Design"></option>
+                <option value="Front-end"></option>
+              </datalist>
+            </div>
+          </div>
+
+          <div class="form-row form-row--2">
+            <div class="field">
+              <label for="prioridade">Prioridade</label>
+              <select id="prioridade" name="prioridade" required aria-required="true">
+                <option value="baixa">Baixa</option>
+                <option value="media">Média</option>
+                <option value="alta" selected>Alta</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="status">Status</label>
+              <select id="status" name="status" required aria-required="true">
+                <option value="pendente">Pendente</option>
+                <option value="andamento" selected>Em andamento</option>
+                <option value="concluida">Concluída</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="editarStatus" class="form-status" role="status" aria-live="polite"></div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Salvar alterações</button>
+            <a class="btn btn-secondary" href="dashboardTarefas.html">Cancelar</a>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© 2026 TaskFlow — Projeto acadêmico ETG.</span>
+      <span>Feito com HTML5 e CSS3.</span>
+    </div>
+  </footer>
+
+  <script src="../Scripts/app.js" defer></script>
+</body>
+</html>
