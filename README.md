@@ -3,7 +3,7 @@
 Protótipo front-end de um gerenciador de tarefas, desenvolvido como projeto final dos módulos de **HTML5/CSS3** e **JavaScript Moderno (ES6+)** do curso de Programador Web da ETG (Escola Técnica do Guará).
 
 🔗 **Demo:** https://philodu.github.io/ProjetoFinalM-dulo2-ETG/
-(tela inicial: `Páginas/login.html`)
+(tela inicial: `index.html`)
 
 ## Sobre o projeto
 
@@ -24,7 +24,7 @@ HTML5 semântico · CSS3 (variáveis, Flexbox, Grid) · JavaScript ES6+ (sem fra
 ## Estrutura
 
 ```
-Páginas/        → login, cadastro, dashboard, detalhes, criar e editar tarefa
+*.html (raiz)   → index (cadastro), login, dashboard, detalhes, criar e editar tarefa
 Estilos/        → stylesBase.css (folha de estilos única do projeto)
 Scripts/        → app.js (lógica compartilhada por todas as páginas)
 Documentação/   → documentação técnica, evidências de acessibilidade/testes
@@ -33,7 +33,7 @@ Instruções/     → diretrizes do projeto
 
 ## Como rodar localmente
 
-Projeto 100% estático — basta abrir `Páginas/login.html` direto no navegador, ou servir a pasta com qualquer servidor local, por exemplo:
+Projeto 100% estático — basta abrir `index.html` direto no navegador, ou servir a pasta com qualquer servidor local, por exemplo:
 
 ```bash
 php -S localhost:8000
